@@ -315,7 +315,7 @@
 
                             <article class="works_card">
                                 <div class="works_card_front">
-                                    <a class="works_card_link" href="#">
+                                    <a class="works_card_link" href="work_tumiki_tennji.html">
                                         <div class="works_card_container" data-color="yellow">
                                             <p class="works_card_role"><span class="works_card_role_type">空間デザイン</span></p>
                                             <h3 class="works_card_name">つみきづく展</h3>
@@ -423,30 +423,30 @@
             </footer>
         </main>
 
-    <script>
-      const profileObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            profileObserver.unobserve(entry.target); 
-          }
+        <script>
+        const profileObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                profileObserver.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const profileSection = document.querySelector('.profile');
+        if (profileSection) profileObserver.observe(profileSection);
+
+        const worksObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add('is-intersected');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.works_card').forEach(card => {
+            worksObserver.observe(card);
         });
-      }, { threshold: 0.2 });
-
-      const profileSection = document.querySelector('.profile');
-      if (profileSection) profileObserver.observe(profileSection);
-
-      const worksObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-intersected');
-          }
-        });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll('.works_card').forEach(card => {
-        worksObserver.observe(card);
-      });
-    </script>
+        </script>
     </body>
 </html>

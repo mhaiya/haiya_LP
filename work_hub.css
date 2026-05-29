@@ -188,6 +188,12 @@
     display: block;
 }
 
+.work_video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+}
+
 /*　ギャラリ */
 .work_gallery {
     display: flex;
@@ -230,7 +236,7 @@
     left: -60px; right: -60px;
     top: 50%;
     transform: translateY(-50%) rotate(2deg);
-    background: #09003d; /* next work band 背景色 */
+    background: #09003d; 
     border-top: 2px solid var(--clr-white);
     border-bottom: 2px solid var(--clr-white);
     color: var(--clr-white);
@@ -273,7 +279,6 @@
         padding: 48px 5%;
     }
 
-    /* 画像：左ボーダーを上ボーダーに切り替え */
     .work_body_image {
         border-left: none;
         border-top: 4px solid var(--clr-black);
